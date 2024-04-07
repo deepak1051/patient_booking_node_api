@@ -105,7 +105,7 @@ app.get('/bookings', async (req, res) => {
 
 app.post('/bookings', async (req, res) => {
   try {
-    const { patientName, phone, bookingDate, time, service, doctor } = req.body;
+    const { patientName, phone, date, service, doctor } = req.body;
 
     if (!patientName || !phone || !date || !service || !doctor) {
       return res.status(400).json({ message: 'All fields are required' });
