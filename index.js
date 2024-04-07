@@ -1,14 +1,16 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 const app = express();
 
+dotenv.config();
+
 // Connect to MongoDB
 mongoose
-  // .connect('mongodb://localhost/dental_booking_system')
-  .connect(process.env.PORT)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log('Connected to MongoDB');
   })
